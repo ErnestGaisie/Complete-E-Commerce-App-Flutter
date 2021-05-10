@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 //This is the best practice
 import './splash_content.dart';
 import '../../../components/default_button.dart';
+import '../../sign_in/sign_in_screen.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -67,8 +68,10 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex: 3),
                     DefaultButton(
-                      text: "Cotinue",
-                      press: () {},
+                      text: "Continue",
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],
