@@ -8,32 +8,40 @@ class SplashContent extends StatelessWidget {
     Key key,
     this.text,
     this.image,
+    this.title,
   }) : super(key: key);
 
-  final String text, image;
+  final String title, text, image;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Spacer(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: getProportionateScreenWidth(5),
+          ),
+          child: Image.asset(
+            image,
+            width: 385.24,
+            height: 337.95,
+          ),
+        ),
         Text(
-          "TOKOTO",
+          title,
           style: TextStyle(
-              fontSize: getProportionateScreenWidth(36),
-              color: kPrimaryColor,
+              fontSize: getProportionateScreenWidth(24),
+              color: Colors.black,
               fontWeight: FontWeight.bold),
+        ),
+        Spacer(
+          flex: 2,
         ),
         Text(
           text,
           textAlign: TextAlign.center,
         ),
-        Spacer(flex: 2),
-        Image.asset(
-          image,
-          height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
-        )
       ],
     );
   }

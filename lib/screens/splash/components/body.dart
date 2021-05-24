@@ -1,4 +1,5 @@
 import 'package:complete_e_commerce_app_flutter/constants.dart';
+import 'package:complete_e_commerce_app_flutter/screens/phone_number_registration/phone_number_registration_screen.dart';
 import 'package:complete_e_commerce_app_flutter/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -16,17 +17,21 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Tokoto, Let's shop!",
-      "image": "assets/images/splash_1.png"
+      "title": "Trustur",
+      "text": "Borderless Security and Identity",
+      "image": "assets/images/Carousel1.png"
     },
     {
+      "title": "Multi-Factor Security",
       "text":
-          "We help people connect with store \naround United States of America",
-      "image": "assets/images/splash_2.png"
+          "Built on trusted military grade encryption \nfor secure, out of and authentication.",
+      "image": "assets/images/Carousel2.png"
     },
     {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/splash_3.png"
+      "title": "ID Authority Verification",
+      "text":
+          "Manage KYC and identity credentials from \nmultiple sources in one place",
+      "image": "assets/images/Carousel3.png"
     }
   ];
 
@@ -38,7 +43,7 @@ class _BodyState extends State<Body> {
       child: Column(
         children: <Widget>[
           Expanded(
-            flex: 3,
+            flex: 4,
             child: PageView.builder(
                 onPageChanged: (value) {
                   setState(() {
@@ -47,8 +52,9 @@ class _BodyState extends State<Body> {
                 },
                 itemCount: splashData.length,
                 itemBuilder: (context, index) => SplashContent(
-                      image: splashData[index]["image"],
+                      title: splashData[index]["title"],
                       text: splashData[index]["text"],
+                      image: splashData[index]["image"],
                     )),
           ),
           Expanded(
@@ -58,7 +64,9 @@ class _BodyState extends State<Body> {
                     horizontal: getProportionateScreenWidth(20)),
                 child: Column(
                   children: <Widget>[
-                    Spacer(),
+                    Spacer(
+                      flex: 3,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
@@ -66,11 +74,18 @@ class _BodyState extends State<Body> {
                         (index) => buildDot(index: index),
                       ),
                     ),
-                    Spacer(flex: 3),
+                    Spacer(),
                     DefaultButton(
-                      text: "Continue",
+                      text: currentPage == 2 ? "Get Started" : "Next",
                       press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
+                        if (currentPage == 0) {
+                          currentPage = 1;
+                        } else if (currentPage == 1) {
+                          currentPage = 2;
+                        } else {
+                          Navigator.pushNamed(
+                              context, PhoneNumberRegScreen.routeName);
+                        }
                       },
                     ),
                     Spacer(),
