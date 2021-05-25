@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         child: Container(
-          color: Color(0xFFE5E5E5),
+          color: Color(0xFFE5E5E5).withOpacity(0.1),
           child: Column(
             children: [
               SizedBox(
@@ -88,7 +88,15 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) =>
                       _itemBuilder(context, platforms[index]),
                 ),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(40),
+                ),
+                child: Divider(
+                  color: Colors.grey,
+                ),
+              ),
             ],
           ),
         ),
@@ -285,14 +293,21 @@ class TopProfileInfo extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(38),
-            ),
+                horizontal: getProportionateScreenWidth(38),
+                vertical: getProportionateScreenHeight(2)),
             width: double.infinity,
             height: 305,
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-            ),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ]),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -13,6 +13,7 @@ import './screens/phone_number_otp/phone_number_otp_screen.dart';
 import 'screens/face_id/face_id_screen.dart';
 import 'screens/finger_print/finger_print_screen.dart';
 import './screens/sign_up_success/sign_up_success_screen.dart';
+import './screens/connections/connections_screen.dart';
 //We use name route
 //All our routes will be available here
 
@@ -29,5 +30,6 @@ final Map<String, WidgetBuilder> routes = {
   FingerPrintScreen.routeName: (context) => FingerPrintScreen(),
   PinCreateScreen.routeName: (context) => PinCreateScreen(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
-  HomeScreen.routeName: (context) => HomeScreen()
+  HomeScreen.routeName: (context) => HomeScreen(),
+  ConnectionsScreen.routeName: (context) => ConnectionsScreen()
 };
