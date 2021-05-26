@@ -366,7 +366,7 @@ class TopProfileInfo extends StatelessWidget {
                 minHeight: getProportionateScreenHeight(155),
                 maxWidth: getProportionateScreenWidth(300),
               ),
-              height: getProportionateScreenHeight(175),
+              height: getProportionateScreenHeight(195),
               decoration: BoxDecoration(
                 color: kPrimaryColor,
                 borderRadius: BorderRadius.circular(20),

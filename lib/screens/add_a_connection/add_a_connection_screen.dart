@@ -1,31 +1,30 @@
-import 'package:complete_e_commerce_app_flutter/constants.dart';
-import 'package:complete_e_commerce_app_flutter/screens/add_a_connection/add_a_connection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import '../../constants.dart';
 import '../../size_config.dart';
-
 import 'components/body.dart';
-import '../../enums.dart';
-import '../../components/custom_buttom_nav_bar.dart';
 
-class ConnectionsScreen extends StatelessWidget {
-  static String routeName = "/connections";
+class AddAConnectionScreen extends StatelessWidget {
+  static String routeName = "/add_a_connection";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFFE5E5E5).withOpacity(0.1),
+        leading: new IconButton(
+          icon: SvgPicture.asset("assets/icons/Cancel.svg"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        centerTitle: true,
         title: Text(
-          "Services",
+          "Add a Service",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(18),
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
-        centerTitle: true,
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -33,21 +32,15 @@ class ConnectionsScreen extends StatelessWidget {
                 onTap: () {},
                 child: IconButton(
                   icon: SvgPicture.asset(
-                    "assets/icons/AddServices.svg",
+                    "assets/icons/idea.svg",
                     color: kPrimaryColor,
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(
-                        context, AddAConnectionScreen.routeName);
-                  },
+                  onPressed: () {},
                 ),
               )),
         ],
       ),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedMenu: MenuState.connections,
-      ),
     );
   }
 }

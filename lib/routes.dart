@@ -1,3 +1,4 @@
+import 'package:complete_e_commerce_app_flutter/screens/add_a_connection/add_a_connection_screen.dart';
 import 'package:complete_e_commerce_app_flutter/screens/complete_profile/complete_profile_screen.dart';
 import 'package:complete_e_commerce_app_flutter/screens/face_id/face_id_screen.dart';
 import 'package:complete_e_commerce_app_flutter/screens/forgot_password/forgot_password_screen.dart';
@@ -14,6 +15,7 @@ import 'screens/face_id/face_id_screen.dart';
 import 'screens/finger_print/finger_print_screen.dart';
 import './screens/sign_up_success/sign_up_success_screen.dart';
 import './screens/connections/connections_screen.dart';
+import 'screens/connection_request/connection_request_screen.dart';
 //We use name route
 //All our routes will be available here
 
@@ -31,5 +33,7 @@ final Map<String, WidgetBuilder> routes = {
   PinCreateScreen.routeName: (context) => PinCreateScreen(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
-  ConnectionsScreen.routeName: (context) => ConnectionsScreen()
+  ConnectionsScreen.routeName: (context) => ConnectionsScreen(),
+  AddAConnectionScreen.routeName: (context) => AddAConnectionScreen(),
+  ConnectionRequestScreen.routeName: (context) => ConnectionRequestScreen()
 };
