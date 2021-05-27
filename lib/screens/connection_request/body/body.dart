@@ -72,8 +72,9 @@ class _BodyState extends State<Body> {
                       ),
                       child: ListView(
                         padding: EdgeInsets.symmetric(
-                            horizontal: getProportionateScreenWidth(22),
-                            vertical: getProportionateScreenHeight(17)),
+                          horizontal: getProportionateScreenWidth(22),
+                          vertical: getProportionateScreenHeight(17),
+                        ),
                         children: <Widget>[
                           Container(
                             height: getProportionateScreenHeight(51),

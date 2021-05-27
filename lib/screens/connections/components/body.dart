@@ -1,5 +1,11 @@
+import 'package:complete_e_commerce_app_flutter/screens/connections_details/mtn_connection_details/mtn_connection_details_screen.dart';
 import 'package:complete_e_commerce_app_flutter/size_config.dart';
 import 'package:flutter/material.dart';
+
+import '../../connections_details/stanbic_connection_details/stanbic_connection_details_screen.dart';
+import '../../connections_details/nss_connection_details/nss_connection_details_screen.dart';
+import '../../connections_details/ssnit_connection_details/ssnit_connection_details_screen.dart';
+import '../../connections_details/ug_connection_details/ug_connection_details_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -30,11 +36,17 @@ class Body extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ServiceContainer(
-                    title: "Stanbic \nBank",
-                    text: "Universal Bank",
-                    image: "assets/images/StanbicRound.png",
-                    color: Color(0xFF083ABC),
+                  GestureDetector(
+                    child: ServiceContainer(
+                      title: "Stanbic \nBank",
+                      text: "Universal Bank",
+                      image: "assets/images/StanbicRound.png",
+                      color: Color(0xFF083ABC),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, StanbicConnectionDetailsScreen.routeName);
+                    },
                   ),
                   ServiceContainer(
                     title: "Vodafone \nCash",
@@ -50,17 +62,29 @@ class Body extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ServiceContainer(
-                    title: "MTN Mobile \nMoney",
-                    text: "Mobile Money Service",
-                    image: "assets/images/MTNRound.png",
-                    color: Color(0xFFFFCB05),
+                  GestureDetector(
+                    child: ServiceContainer(
+                      title: "MTN Mobile \nMoney",
+                      text: "Mobile Money Service",
+                      image: "assets/images/MTNRound.png",
+                      color: Color(0xFFFFCB05),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, MTNConnectionDetailsScreen.routeName);
+                    },
                   ),
-                  ServiceContainer(
-                    title: "University \nof Ghana",
-                    text: "Tertiary Institution",
-                    image: "assets/images/UGRound.png",
-                    color: Color(0xFF1F5CA8),
+                  GestureDetector(
+                    child: ServiceContainer(
+                      title: "University \nof Ghana",
+                      text: "Tertiary Institution",
+                      image: "assets/images/UGRound.png",
+                      color: Color(0xFF1F5CA8),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, UGConnectionDetailsScreen.routeName);
+                    },
                   ),
                 ],
               ),
@@ -70,17 +94,29 @@ class Body extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ServiceContainer(
-                    title: "NSS",
-                    text: "National Service \nScheme",
-                    image: "assets/images/NSSRound.png",
-                    color: Color(0xFF000000),
+                  GestureDetector(
+                    child: ServiceContainer(
+                      title: "NSS",
+                      text: "National Service \nScheme",
+                      image: "assets/images/NSSRound.png",
+                      color: Color(0xFF000000),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, NSSConnectionDetailsScreen.routeName);
+                    },
                   ),
-                  ServiceContainer(
-                    title: "SSNIT",
-                    text: "Insurance Trust",
-                    image: "assets/images/SSNITRound.png",
-                    color: Color(0xFFF96525),
+                  GestureDetector(
+                    child: ServiceContainer(
+                      title: "SSNIT",
+                      text: "Insurance Trust",
+                      image: "assets/images/SSNITRound.png",
+                      color: Color(0xFFF96525),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, SSNITConnectionDetailsScreen.routeName);
+                    },
                   ),
                 ],
               )
